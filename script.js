@@ -9,10 +9,19 @@ button.onclick = () => {
     else {
         let li = document.createElement("li");
         li.innerHTML = info.value;
-        list.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "*";
-        li.appendChild(span);
+       
+        li.innerHTML = ` <span>${info.value}</span><div class="icons">
+        <i class="fa-solid fa-pen" id="edit"></i>
+        <i class="fa-solid fa-trash" id="delete"></i>
+    </div> ` ;
+         list.appendChild(li);
+       
     }
     info.value = "";
-}
+} 
+list.addEventListener("click", (e) => {
+    if (e.target.classList.contains("fa-trash")) {
+        e.target.closest("li").remove();
+        
+    }
+});
