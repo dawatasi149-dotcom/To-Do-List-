@@ -11,6 +11,7 @@ button.onclick = () => {
         li.innerHTML = info.value;
        
         li.innerHTML = ` <span>${info.value}</span><div class="icons">
+         <i class="fa-solid fa-check"></i>
         <i class="fa-solid fa-pen" id="edit"></i>
         <i class="fa-solid fa-trash" id="delete"></i>
     </div> ` ;
@@ -24,4 +25,20 @@ list.addEventListener("click", (e) => {
         e.target.closest("li").remove();
         
     }
+    if (e.target.classList.contains("fa-pen")) {
+        let li = e.target.closest("li");
+        let text = li.querySelector("span");
+
+        let newTask = prompt("Edit task:", text.innerText);
+
+        if (newTask) {
+            text.innerText = newTask;
+        }
+    }
+     if (e.target.classList.contains("fa-check")) {
+        e.target.closest("li").classList.toggle("completed");
+    }
+  
+    
 });
+

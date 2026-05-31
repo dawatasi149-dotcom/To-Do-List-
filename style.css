@@ -92,7 +92,9 @@ margin-top: 4px;
  /* .icons:hover{
     background-color:rgb(102, 8, 8);
 } */
- #edit{
+ /* #edit{
+height: 20px;
+width: 20px;
     background-color: blue;
  }
  #delete{
@@ -100,4 +102,8 @@ margin-top: 4px;
  }
 span {
     padding: 3px;
+} */
+ .completed{
+    text-decoration: line-through;
+    opacity: 0.6;
 }
