@@ -42,3 +42,5 @@ list.addEventListener("click", (e) => {
     
 });
 
+localStorage.setItem("tasks", list.innerHTML);
+list.innerHTML = localStorage.getItem("tasks") || "";
